@@ -9,8 +9,8 @@ const DashboardPage = ({ isConfirmed }) => (
   </div>
 );
 
-DashboardPage.protoTypes = {
-  isconfirmed: PropTypes.bool.isRequired
+DashboardPage.propTypes = {
+  isConfirmed: PropTypes.bool.isRequired
 }
 
 function mapStateToProps({ user }) {
