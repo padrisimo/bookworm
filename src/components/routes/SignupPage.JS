@@ -1,0 +1,25 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import SignupForm from '../forms/SignupForm';
+
+class SignupPage extends Component {
+  submit = (data) => this.props.singup(data).then(() => this.props.history.push("/history"));
+  render() {
+    return (
+      <div>
+        <SignupForm submit={this.submit} />
+      </div>
+    );
+  }
+}
+
+SignupPage.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired,
+  signup: PropTypes.func.isRequired
+};
+
+
+export default connect( null , { signup })(SignupPage);
